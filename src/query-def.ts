@@ -5,14 +5,12 @@ export type QueryDef<TData, TQueryKey extends QueryKey> = {
   __type: TData;
 };
 
-export const QueryDef =
-  <TData>() =>
-  <TQueryKey extends QueryKey>(
-    queryKey: TQueryKey
-  ): QueryDef<TData, TQueryKey> => ({
-    queryKey,
-    __type: null as unknown as TData,
-  });
+export const QueryDef = <TData, TQueryKey extends QueryKey = QueryKey>(
+  queryKey: TQueryKey
+): QueryDef<TData, TQueryKey> => ({
+  queryKey,
+  __type: null as unknown as TData,
+});
 
 export type QueryKeyFn<TQueryKey extends QueryKey, TArgs extends unknown[]> = (
   ...args: TArgs

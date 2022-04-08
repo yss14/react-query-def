@@ -10,8 +10,10 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react-query": "^4.0.0-beta.1",
+  "devDependencies": {
     "typescript": "^3.9.4"
+  },
+  "peerDependencies": {
+    "react-query": "^4.0.0-beta.1"
   }
 }

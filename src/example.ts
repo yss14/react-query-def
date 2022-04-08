@@ -15,7 +15,7 @@ interface Note {
 const UserQuery = QueryDefLazy<User>()(
   (userId: number) => ["users", userId] as const
 );
-const NoteQuery = QueryDef<Note>()(["notes"]);
+const NoteQuery = QueryDef<Note>(["notes"]);
 
 const getUserAsync = () => Promise.resolve<User>({ id: 42, name: "Leed" });
 
