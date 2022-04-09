@@ -3,9 +3,9 @@ import {
   QueryKey,
   useIsFetching as useIsFetchingOriginal,
 } from "react-query";
-import { isQueryKey, QueryFilters } from "react-query/types/core/utils";
+import { QueryFilters } from "react-query/types/core/utils";
 import { QueryDef } from "./query-def";
-import { isQueryDef } from "./utils";
+import { isQueryDef, isQueryKey } from "./utils";
 
 const isContextOptions = (obj: unknown): obj is ContextOptions =>
   typeof obj === "object" && !!(obj as ContextOptions).context;
