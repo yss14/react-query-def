@@ -1,6 +1,7 @@
 import { QueryClient } from "./query-client";
 import { QueryDef, QueryDefLazy } from "./query-def";
 import { useQuery } from "./use-query";
+import { UseQueryOptions } from "./use-query-options";
 
 interface User {
   id: number;
@@ -15,7 +16,8 @@ interface Note {
 const UserQuery = QueryDefLazy<User>()(
   (userId: number) => ["users", userId] as const
 );
-const NoteQuery = QueryDef<Note>(["notes"]);
+const noteKey = ["notes"] as const;
+const NoteQuery = QueryDef<Note, typeof noteKey>(noteKey);
 
 const getUserAsync = () => Promise.resolve<User>({ id: 42, name: "Leed" });
 
@@ -30,3 +32,6 @@ type QueryUpdater<TData> = TData | ((oldData: TData | undefined) => TData);
 const queryClient = new QueryClient();
 
 queryClient.setQueryData(UserQuery(42), { id: 1337, name: "Yolo" });
+
+type NoteQueryOpts = UseQueryOptions<typeof NoteQuery>;
+type UserQueryOpts = UseQueryOptions<typeof UserQuery>;
