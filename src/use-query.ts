@@ -3,8 +3,8 @@ import {
   QueryKey,
   useQuery as useQueryOriginal,
   UseQueryOptions,
-} from "react-query";
-import { QueryDef } from "./query-def";
+} from 'react-query'
+import { QueryDef } from './query-def'
 
 export const useQuery = <
   TQueryFnData = unknown,
@@ -16,6 +16,6 @@ export const useQuery = <
   queryFn: QueryFunction<TQueryFnData, TQueryKey>,
   options?: Omit<
     UseQueryOptions<TQueryFnData, TError, TData, TQueryKey>,
-    "queryKey" | "queryFn"
+    'queryKey' | 'queryFn'
   >
-) => useQueryOriginal(queryDef.queryKey, queryFn, options);
+) => useQueryOriginal(queryDef.queryKey, queryFn, options)

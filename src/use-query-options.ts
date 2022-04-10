@@ -1,8 +1,8 @@
-import { QueryDef } from "./query-def";
+import { QueryDef } from './query-def'
 import {
   QueryKey,
   UseQueryOptions as UseQueryOptionsOriginal,
-} from "react-query";
+} from 'react-query'
 
 export type UseQueryOptions<
   TQueryDef extends
@@ -24,4 +24,4 @@ export type UseQueryOptions<
       TDataSelect extends never ? TData : TDataSelect,
       TQueryKey
     >
-  : never;
+  : never
