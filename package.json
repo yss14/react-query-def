@@ -6,11 +6,14 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
+    "prettify": "prettier --write . --config ./.prettierrc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "prettier": "^2.6.2",
+    "react-query": "^4.0.0-beta.1",
     "typescript": "^4.6.3"
   },
   "peerDependencies": {
