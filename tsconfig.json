@@ -4,10 +4,12 @@
     "lib": ["ESNext", "dom"],
     "noImplicitAny": true,
     "noUnusedParameters": true,
-    "target": "es5",
+    "target": "es6",
     "skipLibCheck": true,
     "outDir": "build",
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "Node",
+    "module": "CommonJS"
   },
   "include": ["./src"]
 }
