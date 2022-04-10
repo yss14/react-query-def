@@ -1,5 +1,6 @@
 import {
   QueryClient as QueryClientOriginal,
+  QueryClientConfig,
   QueryKey,
   SetDataOptions,
 } from "react-query";
@@ -9,6 +10,10 @@ import { QueryDef } from "./query-def";
 import { isQueryDef, isQueryKey } from "./utils";
 
 export class QueryClient extends QueryClientOriginal {
+  constructor(config?: QueryClientConfig) {
+    super(config);
+  }
+
   getQueryData<TData = unknown>(
     queryKey: QueryKey,
     filters?: QueryFilters
